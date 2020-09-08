@@ -115,13 +115,14 @@ exports.actualizarProyecto = async (req,res)=>{
     //Enviar a la consola lo que el usiario escriba
     //console.log(req.body);
     //validar que tengamos algo en el input
+    console.log('paso por aqui');
     const usuarioId = res.locals.usuario.id;
     const proyectos = Proyectos.findAll({where: {usuarioId}});
 
-    const { nombre } = req.body.nombre;
+    const { nombre } = req.body;
 
     let errores =[];
-
+    console.log(nombre);
     if(!nombre) {
         errores.push({'texto': 'Agrega un nombre al proyecto'});
     }

@@ -37,7 +37,7 @@ exports.crearCuenta = async (req, res) =>{
             usuario,
             subject: 'Confirma tu cuenta UpTask',
             confirmarUrl,
-            archivo: 'confirmar-cuenta'
+            archivo: 'confirmar-cuenta' //tamplate de pug
         });
          //redirigir al usuario
          req.flash('correcto', 'Enviamos un correo, confirma tu cuenta');

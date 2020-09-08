@@ -7,8 +7,7 @@ const emailConfig = require('../config/email');
 const email = require('../config/email');
 
 let transport = nodemailer.createTransport({
-    host: emailConfig.host,
-    port: emailConfig.port,
+    service: 'gmail',
     auth: {
       user: emailConfig.user,
       pass: emailConfig.pass
@@ -31,6 +30,7 @@ exports.enviar = async (opciones) =>{
     text,
     html 
   };
+
   const enviarEmail = util.promisify(transport.sendMail, transport);
   return enviarEmail.call(transport, opcionesEmail);
   
